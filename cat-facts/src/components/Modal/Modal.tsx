@@ -25,7 +25,7 @@ export const Modal: React.FC<ModalProps> = ({ onClose }) => {
         return <div>Произошла ошибка!</div>;
     }
 
-    if (!data) {a
+    if (!data) {
         return <div>Данные о котиках потерялись...</div>
     }
 
