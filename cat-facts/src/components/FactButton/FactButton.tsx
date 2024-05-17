@@ -11,7 +11,7 @@ export const  FactButton = () => {
 
     return (
         <div className="button-center">
-            <button className="button-fact" onClick={openModal}>Факт о котике</button>
+            <button className={isModalOpen ? "button-fact disabled" : "button-fact"} onClick={openModal}></button>
             {isModalOpen && <Modal onClose={closeModal} />}
         </div>
     );

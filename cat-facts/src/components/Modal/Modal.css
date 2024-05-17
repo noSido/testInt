@@ -1,35 +1,53 @@
-/* index.css */
 .modal {
     position: fixed;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
+    transform: translate(-50%, -110%);
+    background-color: #fff;
+    border-radius: 10px;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.modal-content {
-    background-color: #fefefe;
-    color: #1a1a1a;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 500px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
 .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    animation: pulse 1s ease-in-out infinite alternate;
 }
 
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+@keyframes pulse {
+    from {
+        transform: scale(2);
+        color:  black;
+    }
+    to {
+        transform: scale(3);
+        color: red;
+    }
+}
+
+.modal-content {
+    text-align: center;
+}
+
+.loading {
+    position: absolute;
+    background-image: url('../../img/loading.gif');
+    background-size: contain;
+    width: 450px;
+    height: 450px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.error {
+    text-align: center;
+    color: red;
+}
+
+.lostdata {
+    text-align: center;
+    color: gray;
 }

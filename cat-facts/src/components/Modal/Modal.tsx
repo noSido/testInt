@@ -9,7 +9,7 @@ interface ModalProps {
 }
 
 export const Modal: React.FC<ModalProps> = ({ onClose }) => {
-    const { data, isLoading, isError } = useQuery(
+    const { data, isLoading, isError, refetch } = useQuery(
         'fact',
         fetchCatFact,
         {
@@ -17,16 +17,20 @@ export const Modal: React.FC<ModalProps> = ({ onClose }) => {
             cacheTime: 0
     });
 
+    const handleRefetch = () => {
+        refetch();
+    };
+
     if (isLoading) {
-        return <div>Идёт загрузка...</div>;
+        return <div className="loading"></div>;
     }
 
     if (isError) {
-        return <div>Произошла ошибка!</div>;
+        return <div className="error">Произошла ошибка!<button onClick={handleRefetch}>Повторить запрос</button></div>;
     }
 
     if (!data) {
-        return <div>Данные о котиках потерялись...</div>
+        return <div className="lostdata">Данные о котиках потерялись...<button onClick={handleRefetch}>Повторить запрос</button></div>
     }
 
     return (
