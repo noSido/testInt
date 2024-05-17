@@ -16,8 +16,17 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 
+.button-fact:hover {
+    border: 2px solid #ccc;
+}
+
 .button-fact.disabled {
     cursor: not-allowed;
     opacity: 0.3;
     transition: opacity 0.6s ease;
+}
+
+.button-fact.disabled:hover {
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
