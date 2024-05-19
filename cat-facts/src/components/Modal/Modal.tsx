@@ -26,11 +26,11 @@ export const Modal: React.FC<ModalProps> = ({ onClose }) => {
     }
 
     if (isError) {
-        return <div className="error">Произошла ошибка!<button onClick={handleRefetch}>Повторить запрос</button></div>;
+        return <div className="error"><button className="error-button" onClick={handleRefetch}> Произошла ошибка! <br/> Повторить запрос...</button></div>;
     }
 
     if (!data) {
-        return <div className="lostdata">Данные о котиках потерялись...<button onClick={handleRefetch}>Повторить запрос</button></div>
+        return <div className="lost-data"><button className="lost-data--button" onClick={handleRefetch}>Данные о котиках потерялись! <br/>Повторить запрос...</button></div>
     }
 
     return (
