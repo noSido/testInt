@@ -1,4 +1,13 @@
+@font-face {
+    font-family: 'MyFont';
+    src: url('./fonts/poetsenone-regular-webfont.woff2') format('woff2'),
+    url('./fonts/poetsenone-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
+    font-family: 'MyFont', sans-serif;
     background-color: #f2f2f2;
     display: flex;
     justify-content: center;
